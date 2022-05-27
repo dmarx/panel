@@ -10,7 +10,7 @@ import uuid
 from collections import OrderedDict
 from functools import partial
 from pathlib import Path, PurePath
-from typing import IO, TYPE_CHECKING, Any, Dict, List, Optional, Union
+from typing import IO, TYPE_CHECKING, Any, Dict, List, Optional, ClassVar
 
 import param
 from bokeh.document.document import Document as _Document
@@ -481,13 +481,13 @@ class BasicTemplate(BaseTemplate):
     _LOCAL: str = LOCAL_DIST
 
     # pathlib.Path pointing to local CSS file(s)
-    _css: Union[Path, str, List[Union[Path, str]], None] = None
+    _css: ClassVar[Path | str | List[Path, str] | None] = None
 
     # pathlib.Path pointing to local JS file(s)
-    _js: Union[Path, str, List[Union[Path, str]], None] = None
+    _js: ClassVar[Path | str | List[Path, str] | None] = None
 
     # pathlib.Path pointing to local Jinja2 template
-    _template: Union[Path, str, List[Union[Path, str]], None] = None
+    _template: ClassVar[Path] | None = None
 
     # External resources
     _resources: Dict[str, Dict[str, str]] = {'css': {}, 'js': {}, 'js_modules': {}, 'tarball': {}}
