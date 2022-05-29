@@ -22,14 +22,17 @@ from ..config import _base_config, config, panel_extension
 from ..io.model import add_to_doc
 from ..io.notebook import render_template
 from ..io.notifications import NotificationArea
-from ..io.resources import (BUNDLE_DIR, CDN_DIST, LOCAL_DIST, _env,
-                            component_resource_path, resolve_custom_path)
+from ..io.resources import (
+    BUNDLE_DIR, CDN_DIST, LOCAL_DIST, _env, component_resource_path,
+    resolve_custom_path,
+)
 from ..io.save import save
 from ..io.state import state
 from ..layout import Column, GridSpec, ListLike
 from ..models.comm_manager import CommManager
-from ..pane import HTML, HoloViews, Str
-from ..pane import panel as _panel
+from ..pane import (
+    HTML, HoloViews, Str, panel as _panel,
+)
 from ..pane.image import ImageBase
 from ..reactive import ReactiveHTML
 from ..util import isurl, url_path
